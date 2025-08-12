@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  margin: 0 202px 0 192px;
+}
+
+.list-of-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+  row-gap: 20px;
+}
+
+.item {
+  background-color: #ffffff;
+}

@@ -6,7 +6,7 @@ type Item = {
   title: string;
   capacity: number;
   dimensions: string;
-  functions: string;
+  functions: string[];
   energyClass: string;
   priceValidityDate: string;
   price: number;
