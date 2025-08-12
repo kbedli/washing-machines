@@ -1,14 +1,31 @@
 import { useContext, type ChangeEvent } from "react";
 import { GlobalContext } from "../Context";
+import data from "../data";
 
 export const FilteringInputs = () => {
   const { filteringInputs, setFilteringInputs } = useContext(GlobalContext);
+
+  const functionsCategories = [
+    "Wszystkie",
+    ...new Set(data.flatMap((item) => item.functions)),
+  ];
+
+  const energyClassCategories = [
+    "Wszystkie",
+    ...new Set(data.flatMap((item) => item.energyClass).sort()),
+  ];
+
+  const capacityCategories = [
+    "Wszystkie",
+    ...new Set(data.flatMap((item) => item.capacity).sort((a, b) => a - b)),
+  ];
 
   const handleInputsChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setFilteringInputs((items) => ({
       ...items,
       [e.target.name]: e.target.value,
     }));
+    console.log(functionsCategories);
   };
 
   return (
@@ -33,11 +50,9 @@ export const FilteringInputs = () => {
           value={filteringInputs.functions}
           onChange={handleInputsChange}
         >
-          <option>Wszystkie</option>
-          <option>Drzwi AddWash</option>
-          <option>Panel AI Control</option>
-          <option>Silnik inwerterowy</option>
-          <option>Wyświetlacz elektroniczny</option>
+          {functionsCategories.map((category, index) => {
+            return <option key={index}>{category}</option>;
+          })}
         </select>
       </div>
 
@@ -48,12 +63,9 @@ export const FilteringInputs = () => {
           value={filteringInputs.energyClass}
           onChange={handleInputsChange}
         >
-          <option>Wszystkie</option>
-          <option>A</option>
-          <option>B</option>
-          <option>C</option>
-          <option>D</option>
-          <option>E</option>
+          {energyClassCategories.map((category, index) => {
+            return <option key={index}>{category}</option>;
+          })}
           <option>F</option>
         </select>
       </div>
@@ -65,10 +77,9 @@ export const FilteringInputs = () => {
           value={filteringInputs.capacity}
           onChange={handleInputsChange}
         >
-          <option>Wszystkie</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10.5</option>
+          {capacityCategories.map((category, index) => {
+            return <option key={index}>{category}</option>;
+          })}
         </select>
       </div>
     </div>
