@@ -25,7 +25,6 @@ export const FilteringInputs = () => {
       ...items,
       [e.target.name]: e.target.value,
     }));
-    console.log(functionsCategories);
   };
 
   return (

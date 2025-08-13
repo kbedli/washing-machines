@@ -18,16 +18,20 @@ type FilteringInputsTypes = {
   functions: string;
   energyClass: string;
   capacity: string;
+  searchTerm: string;
 };
 
 type GlobalContextType = {
   items: Item[];
   setItems: React.Dispatch<React.SetStateAction<Item[]>>;
+  allItems: Item[];
+  setAllItems: React.Dispatch<React.SetStateAction<Item[]>>;
   filteringInputs: {
     sortBy: string;
     functions: string;
     energyClass: string;
     capacity: string;
+    searchTerm: string;
   };
   setFilteringInputs: React.Dispatch<
     React.SetStateAction<FilteringInputsTypes>
@@ -35,6 +39,8 @@ type GlobalContextType = {
 };
 
 const defaultValues: GlobalContextType = {
+  allItems: data,
+  setAllItems: (() => {}) as React.Dispatch<React.SetStateAction<Item[]>>,
   items: data,
   setItems: (() => {}) as React.Dispatch<React.SetStateAction<Item[]>>,
   filteringInputs: {
@@ -42,6 +48,7 @@ const defaultValues: GlobalContextType = {
     functions: "Wszystkie",
     energyClass: "Wszystkie",
     capacity: "Wszystkie",
+    searchTerm: "",
   },
   setFilteringInputs: (() => {}) as React.Dispatch<
     React.SetStateAction<FilteringInputsTypes>
@@ -52,14 +59,23 @@ const defaultValues: GlobalContextType = {
 export const GlobalContext = createContext<GlobalContextType>(defaultValues);
 
 const GlobalState = () => {
+  const [allItems, setAllItems] = useState<Item[]>(data);
   const [items, setItems] = useState<Item[]>(data);
   const [filteringInputs, setFilteringInputs] = useState<FilteringInputsTypes>({
     sortBy: "Wszystkie",
     functions: "Wszystkie",
     energyClass: "Wszystkie",
     capacity: "Wszystkie",
+    searchTerm: "",
   });
-  return { items, setItems, filteringInputs, setFilteringInputs };
+  return {
+    items,
+    setItems,
+    filteringInputs,
+    setFilteringInputs,
+    allItems,
+    setAllItems,
+  };
 };
 
 export const GlobalContextProvider = ({
@@ -67,8 +83,14 @@ export const GlobalContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const { items, setItems, filteringInputs, setFilteringInputs } =
-    GlobalState();
+  const {
+    items,
+    setItems,
+    filteringInputs,
+    setFilteringInputs,
+    allItems,
+    setAllItems,
+  } = GlobalState();
   return (
     <GlobalContext.Provider
       value={{
@@ -76,6 +98,8 @@ export const GlobalContextProvider = ({
         setItems,
         filteringInputs,
         setFilteringInputs,
+        allItems,
+        setAllItems,
       }}
     >
       {children}

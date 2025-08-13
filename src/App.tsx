@@ -1,11 +1,13 @@
 import "./App.css";
 import { FilteringInputs } from "./compnents/FilteringInputs";
 import { ListOfItems } from "./compnents/ListOftems";
+import { SearchInput } from "./compnents/SearchInput";
 
 function App() {
   return (
     <div>
       <p>Start of the project</p>
+      <SearchInput />
       <FilteringInputs />
       <ListOfItems />
     </div>
