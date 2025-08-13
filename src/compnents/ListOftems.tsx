@@ -32,6 +32,8 @@ export const ListOfItems = () => {
       result.sort((a, b) => a.price - b.price);
     } else if (filteringInputs.sortBy === "Pojemność") {
       result.sort((a, b) => a.capacity - b.capacity);
+    } else if (filteringInputs.sortBy === "Popularność") {
+      result.sort((a, b) => b.popularity - a.popularity);
     }
 
     return result;
@@ -50,6 +52,7 @@ export const ListOfItems = () => {
           priceValidityDate,
           price,
           instalments,
+          popularity,
         } = item;
         return (
           <article className="item" key={id}>
@@ -61,6 +64,7 @@ export const ListOfItems = () => {
             <p>{priceValidityDate}</p>
             <p>{price}</p>
             <p>{instalments}</p>
+            <p>{popularity}</p>
           </article>
         );
       })}

@@ -11,6 +11,7 @@ type Item = {
   priceValidityDate: string;
   price: number;
   instalments: string;
+  popularity: number;
 };
 
 type FilteringInputsTypes = {

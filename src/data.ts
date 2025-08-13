@@ -29,7 +29,7 @@ export default [
     ],
     energyClass: "B",
     priceValidityDate: "15.09.2022 - 21.09.2022",
-    price: 36199.0,
+    price: 3699.0,
     instalments: "53,31 zł x 60 rat",
     popularity: 5,
   },

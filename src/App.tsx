@@ -6,7 +6,6 @@ import { SearchInput } from "./compnents/SearchInput";
 function App() {
   return (
     <div>
-      <p>Start of the project</p>
       <SearchInput />
       <FilteringInputs />
       <ListOfItems />
