@@ -1,23 +1,23 @@
 import { useContext, type ChangeEvent } from "react";
 import { GlobalContext } from "../Context";
-import data from "../data";
 
 export const FilteringInputs = () => {
-  const { filteringInputs, setFilteringInputs } = useContext(GlobalContext);
+  const { filteringInputs, setFilteringInputs, allItems } =
+    useContext(GlobalContext);
 
   const functionsCategories = [
     "Wszystkie",
-    ...new Set(data.flatMap((item) => item.functions)),
+    ...new Set(allItems.flatMap((item) => item.functions)),
   ];
 
   const energyClassCategories = [
     "Wszystkie",
-    ...new Set(data.flatMap((item) => item.energyClass).sort()),
+    ...new Set(allItems.flatMap((item) => item.energyClass).sort()),
   ];
 
   const capacityCategories = [
     "Wszystkie",
-    ...new Set(data.flatMap((item) => item.capacity).sort((a, b) => a - b)),
+    ...new Set(allItems.flatMap((item) => item.capacity).sort((a, b) => a - b)),
   ];
 
   const handleInputsChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -65,7 +65,6 @@ export const FilteringInputs = () => {
           {energyClassCategories.map((category, index) => {
             return <option key={index}>{category}</option>;
           })}
-          <option>F</option>
         </select>
       </div>
 
