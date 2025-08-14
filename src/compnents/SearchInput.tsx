@@ -26,11 +26,14 @@ export const SearchInput = () => {
   }, [filteringInputs.searchTerm, allItems, setItems]);
 
   return (
-    <input
-      type="text"
-      placeholder="Search..."
-      value={filteringInputs.searchTerm}
-      onChange={handleSearchChange}
-    />
+    <div className="search-bar">
+      <input
+        type="text"
+        placeholder="Search..."
+        value={filteringInputs.searchTerm}
+        onChange={handleSearchChange}
+        className="search-input"
+      />
+    </div>
   );
 };

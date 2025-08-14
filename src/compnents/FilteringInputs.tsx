@@ -28,13 +28,14 @@ export const FilteringInputs = () => {
   };
 
   return (
-    <div style={{ display: "flex", gap: "16px" }}>
-      <div>
-        <label>Sortuj po:</label>
+    <div className="filters">
+      <div className="filter">
+        <label className="input-label">Sortuj po:</label>
         <select
           name="sortBy"
           value={filteringInputs.sortBy}
           onChange={handleInputsChange}
+          className="select-filter"
         >
           <option>Popularność</option>
           <option>Cena</option>
@@ -42,12 +43,13 @@ export const FilteringInputs = () => {
         </select>
       </div>
 
-      <div>
-        <label>Funkcje:</label>
+      <div className="filter">
+        <label className="input-label">Funkcje:</label>
         <select
           name="functions"
           value={filteringInputs.functions}
           onChange={handleInputsChange}
+          className="select-filter"
         >
           {functionsCategories.map((category, index) => {
             return <option key={index}>{category}</option>;
@@ -55,12 +57,13 @@ export const FilteringInputs = () => {
         </select>
       </div>
 
-      <div>
-        <label>Klasa energetyczna:</label>
+      <div className="filter">
+        <label className="input-label">Klasa energetyczna:</label>
         <select
           name="energyClass"
           value={filteringInputs.energyClass}
           onChange={handleInputsChange}
+          className="select-filter"
         >
           {energyClassCategories.map((category, index) => {
             return <option key={index}>{category}</option>;
@@ -68,12 +71,13 @@ export const FilteringInputs = () => {
         </select>
       </div>
 
-      <div>
-        <label>Pojemność:</label>
+      <div className="filter">
+        <label className="input-label">Pojemność:</label>
         <select
           name="capacity"
           value={filteringInputs.capacity}
           onChange={handleInputsChange}
+          className="select-filter"
         >
           {capacityCategories.map((category, index) => {
             return <option key={index}>{category}</option>;
