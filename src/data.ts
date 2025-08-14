@@ -1,6 +1,11 @@
+import product1 from "./assets/images/product1.png";
+import product2 from "./assets/images/product2.png";
+import product3 from "./assets/images/product3.png";
+
 export default [
   {
     id: 1,
+    image: product1,
     title: "WW90T754ABT, Pralka QuickDrive™, 9 kg, biała",
     capacity: 9,
     dimensions: "55x60x85 cm",
@@ -18,6 +23,7 @@ export default [
   },
   {
     id: 2,
+    image: product2,
     title: "WW10T654DLH, Pralka EcoBubble™, 10,5 kg, biała",
     capacity: 10.5,
     dimensions: "55x60x85 cm",
@@ -35,6 +41,7 @@ export default [
   },
   {
     id: 3,
+    image: product3,
     title: "WW90T654DLH, Pralka EcoBubble™, 9 kg, biała",
     capacity: 8,
     dimensions: "55x60x85 cm",
@@ -52,6 +59,7 @@ export default [
   },
   {
     id: 4,
+    image: product1,
     title: "WW90T754ABT, Pralka QuickDrive™, 9 kg, biała",
     capacity: 9,
     dimensions: "55x60x85 cm",
@@ -69,6 +77,7 @@ export default [
   },
   {
     id: 5,
+    image: product2,
     title: "WW10T654DLH, Pralka EcoBubble™, 10,5 kg, biała",
     capacity: 10.5,
     dimensions: "55x60x85 cm",
@@ -86,6 +95,7 @@ export default [
   },
   {
     id: 6,
+    image: product3,
     title: "WW90T654DLH, Pralka EcoBubble™, 8 kg, biała",
     capacity: 8,
     dimensions: "55x60x85 cm",

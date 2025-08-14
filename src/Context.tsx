@@ -3,6 +3,7 @@ import data from "./data";
 
 type Item = {
   id: number;
+  image: string;
   title: string;
   capacity: number;
   dimensions: string;
@@ -60,8 +61,8 @@ const defaultValues: GlobalContextType = {
 export const GlobalContext = createContext<GlobalContextType>(defaultValues);
 
 const GlobalState = () => {
-  const [allItems, setAllItems] = useState<Item[]>(data);
-  const [items, setItems] = useState<Item[]>(data);
+  const [allItems, setAllItems] = useState<Item[]>(data); //all data
+  const [items, setItems] = useState<Item[]>(data); //filtered data
   const [filteringInputs, setFilteringInputs] = useState<FilteringInputsTypes>({
     sortBy: "Wszystkie",
     functions: "Wszystkie",

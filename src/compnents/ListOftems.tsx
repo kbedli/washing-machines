@@ -44,6 +44,7 @@ export const ListOfItems = () => {
       {filterItems.map((item) => {
         const {
           id,
+          image,
           title,
           capacity,
           dimensions,
@@ -56,6 +57,7 @@ export const ListOfItems = () => {
         } = item;
         return (
           <article className="item" key={id}>
+            <img src={image} alt="Washing machine" />
             <p>{title}</p>
             <p>{capacity}</p>
             <p>{dimensions}</p>
