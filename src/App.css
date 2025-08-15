@@ -121,11 +121,143 @@ body {
 
 .list-of-items {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  /* grid-template-columns: repeat(3, 1fr); */
   column-gap: 16px;
   row-gap: 20px;
 }
 
 .item {
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
+  padding: 25px;
+}
+.item-image {
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.item-name {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.item-property {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #767676;
+}
+
+.item-property-span {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.energy-label {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  padding: 1px 30px 1px 12px;
+  clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+  font-size: 12px;
+  background-color: #009949;
+  margin-left: 10px;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-start;
+}
+
+.price-main {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.price-suffix {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 4px;
+  line-height: 1;
+  transform: translateY(4px);
+}
+
+.price-grosze {
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.price-zl {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.installments {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: #555555;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 36;
+  opacity: 1;
+  gap: 10px;
+  padding-top: 14px;
+  padding-right: 40px;
+  padding-bottom: 14px;
+  padding-left: 40px;
+  border-radius: 24px;
+  font-family: SamsungOne;
+  font-weight: 700;
+
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 15%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-top: 25px;
+}
+
+.stars {
+  display: flex;
+  border-color: #009949;
+  align-items: center;
+}
+
+.btn-selected {
+  background-color: #000000;
+}
+
+.btn-not-selected {
+  background-color: #1428a0;
+}
+
+.margin-b10 {
+  margin-bottom: 10px;
+}
+
+.margin-b30 {
+  margin-bottom: 30px;
+}
+
+.margin-r5 {
+  margin-right: 5px;
 }

@@ -1,5 +1,6 @@
 import { useContext, useMemo } from "react";
 import { GlobalContext } from "../Context";
+import { SingleItem } from "./SingleItem";
 
 export const ListOfItems = () => {
   const { items, filteringInputs } = useContext(GlobalContext);
@@ -41,35 +42,9 @@ export const ListOfItems = () => {
 
   return (
     <div className="list-of-items">
-      {filterItems.map((item) => {
-        const {
-          id,
-          image,
-          title,
-          capacity,
-          dimensions,
-          functions,
-          energyClass,
-          priceValidityDate,
-          price,
-          instalments,
-          popularity,
-        } = item;
-        return (
-          <article className="item" key={id}>
-            <img src={image} alt="Washing machine" />
-            <p>{title}</p>
-            <p>{capacity}</p>
-            <p>{dimensions}</p>
-            <p>{functions}</p>
-            <p>{energyClass}</p>
-            <p>{priceValidityDate}</p>
-            <p>{price}</p>
-            <p>{instalments}</p>
-            <p>{popularity}</p>
-          </article>
-        );
-      })}
+      {filterItems.map((item) => (
+        <SingleItem key={item.id} {...item} />
+      ))}
     </div>
   );
 };

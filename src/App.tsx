@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import "./App.css";
-import { FilteringInputs } from "./compnents/FilteringInputs";
-import { ListOfItems } from "./compnents/ListOftems";
-import { SearchInput } from "./compnents/SearchInput";
+import { FilteringInputs } from "./components/FilteringInputs";
+import { ListOfItems } from "./components/ListOftems";
+import { SearchInput } from "./components/SearchInput";
 import { GlobalContext } from "./Context";
 
 function App() {
