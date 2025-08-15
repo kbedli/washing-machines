@@ -26,17 +26,12 @@ export const SingleItem = ({
   instalments,
   popularity,
 }: SingleItemProps) => {
-  const [line1, line2] = title.split(/(Pralka)/);
   return (
     <div className="item">
       <img src={image} alt="Washing machine" className="item-image" />
       <div className="margin-b30">
-        <p className="item-name">
-          {line1.trim()} {line2}
-        </p>
-        <p className="item-name">
-          {title.replace(`${line1}${line2}`, "").trim()}
-        </p>
+        <p className="item-name">{title.split("Pralka")[0]}Pralka</p>
+        <p className="item-name">{title.split("Pralka")[1]}</p>
       </div>
       <p className="item-property">
         Pojemność (kg): <span className="item-property-span">{capacity}</span>

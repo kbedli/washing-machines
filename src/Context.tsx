@@ -28,13 +28,7 @@ type GlobalContextType = {
   setItems: React.Dispatch<React.SetStateAction<Item[]>>;
   allItems: Item[];
   setAllItems: React.Dispatch<React.SetStateAction<Item[]>>;
-  filteringInputs: {
-    sortBy: string;
-    functions: string;
-    energyClass: string;
-    capacity: string;
-    searchTerm: string;
-  };
+  filteringInputs: FilteringInputsTypes;
   setFilteringInputs: React.Dispatch<
     React.SetStateAction<FilteringInputsTypes>
   >;
@@ -46,7 +40,7 @@ const defaultValues: GlobalContextType = {
   items: data,
   setItems: (() => {}) as React.Dispatch<React.SetStateAction<Item[]>>,
   filteringInputs: {
-    sortBy: "Wszystkie",
+    sortBy: "Popularność",
     functions: "Wszystkie",
     energyClass: "Wszystkie",
     capacity: "Wszystkie",
@@ -64,7 +58,7 @@ const GlobalState = () => {
   const [allItems, setAllItems] = useState<Item[]>(data); //all data
   const [items, setItems] = useState<Item[]>(data); //filtered data
   const [filteringInputs, setFilteringInputs] = useState<FilteringInputsTypes>({
-    sortBy: "Wszystkie",
+    sortBy: "Popularność",
     functions: "Wszystkie",
     energyClass: "Wszystkie",
     capacity: "Wszystkie",
