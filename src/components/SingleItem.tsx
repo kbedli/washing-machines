@@ -41,7 +41,7 @@ export const SingleItem = ({
         <span className="item-property-span">{dimensions}</span>
       </p>
       <p className="item-property margin-b10">
-        Funkcje:
+        Funkcje:{" "}
         <span className="item-property-span">{functions.join(", ")}</span>
       </p>
       <p className="item-property margin-b10">

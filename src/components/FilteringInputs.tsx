@@ -1,9 +1,12 @@
-import { useContext, type ChangeEvent } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../Context";
+import { CustomSelect } from "../ui/CustomSelect";
 
 export const FilteringInputs = () => {
   const { filteringInputs, setFilteringInputs, allItems } =
     useContext(GlobalContext);
+
+  const sortCateories = ["Popularność", "Cena", "Pojemność"];
 
   const functionsCategories = [
     "Wszystkie",
@@ -20,7 +23,9 @@ export const FilteringInputs = () => {
     ...new Set(allItems.flatMap((item) => item.capacity).sort((a, b) => a - b)),
   ];
 
-  const handleInputsChange = (e: ChangeEvent<HTMLSelectElement>) => {
+  const handleInputsChange = (e: {
+    target: { name: string; value: string | number };
+  }) => {
     setFilteringInputs((items) => ({
       ...items,
       [e.target.name]: e.target.value,
@@ -29,61 +34,34 @@ export const FilteringInputs = () => {
 
   return (
     <div className="filters">
-      <div className="filter">
-        <label className="input-label">Sortuj po:</label>
-        <select
-          name="sortBy"
-          value={filteringInputs.sortBy}
-          onChange={handleInputsChange}
-          className="select-filter"
-        >
-          <option>Popularność</option>
-          <option>Cena</option>
-          <option>Pojemność</option>
-        </select>
-      </div>
-
-      <div className="filter">
-        <label className="input-label">Funkcje:</label>
-        <select
-          name="functions"
-          value={filteringInputs.functions}
-          onChange={handleInputsChange}
-          className="select-filter"
-        >
-          {functionsCategories.map((category, index) => {
-            return <option key={index}>{category}</option>;
-          })}
-        </select>
-      </div>
-
-      <div className="filter">
-        <label className="input-label">Klasa energetyczna:</label>
-        <select
-          name="energyClass"
-          value={filteringInputs.energyClass}
-          onChange={handleInputsChange}
-          className="select-filter"
-        >
-          {energyClassCategories.map((category, index) => {
-            return <option key={index}>{category}</option>;
-          })}
-        </select>
-      </div>
-
-      <div className="filter">
-        <label className="input-label">Pojemność:</label>
-        <select
-          name="capacity"
-          value={filteringInputs.capacity}
-          onChange={handleInputsChange}
-          className="select-filter"
-        >
-          {capacityCategories.map((category, index) => {
-            return <option key={index}>{category}</option>;
-          })}
-        </select>
-      </div>
+      <CustomSelect
+        label="Sortuj po:"
+        name="sortBy"
+        options={sortCateories}
+        value={filteringInputs.sortBy}
+        onChange={handleInputsChange}
+      />
+      <CustomSelect
+        label="Funkcje:"
+        name="functions"
+        options={functionsCategories}
+        value={filteringInputs.functions}
+        onChange={handleInputsChange}
+      />
+      <CustomSelect
+        label="Klasa energetyczna:"
+        name="energyClass"
+        options={energyClassCategories}
+        value={filteringInputs.energyClass}
+        onChange={handleInputsChange}
+      />
+      <CustomSelect
+        label="Pojemność:"
+        name="capacity"
+        options={capacityCategories}
+        value={filteringInputs.capacity}
+        onChange={handleInputsChange}
+      />
     </div>
   );
 };
