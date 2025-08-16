@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { GlobalContext } from "../Context";
+import { GlobalContext } from "../contexts/Context";
 import { CustomSelect } from "../ui/CustomSelect";
 
 export const FilteringInputs = () => {
   const { filteringInputs, setFilteringInputs, allItems } =
     useContext(GlobalContext);
 
-  const sortCateories = ["Popularność", "Cena", "Pojemność"];
+  const sortCategories = ["Popularność", "Cena", "Pojemność"];
 
   const functionsCategories = [
     "Wszystkie",
@@ -37,7 +37,7 @@ export const FilteringInputs = () => {
       <CustomSelect
         label="Sortuj po:"
         name="sortBy"
-        options={sortCateories}
+        options={sortCategories}
         value={filteringInputs.sortBy}
         onChange={handleInputsChange}
       />

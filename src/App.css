@@ -31,6 +31,12 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+}
 
 .title {
   font-weight: 700;
@@ -40,7 +46,6 @@ body {
   height: 56px;
   text-align: center;
   margin: 0 auto;
-  background-color: #ffffff;
 }
 
 /* COMPONENT SEARCHINPUT */
@@ -320,4 +325,33 @@ body {
 
 .margin-r5 {
   margin-right: 5px;
+}
+
+/* CART ICON */
+.cart-icon-container {
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 30px;
+  margin-right: 30px;
+}
+
+.amount-container {
+  position: absolute;
+  top: -6px;
+  right: -12px;
+  background-color: #8d8d8d;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.total-amount {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
 }

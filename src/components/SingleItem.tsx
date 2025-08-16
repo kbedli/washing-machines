@@ -2,6 +2,7 @@ import { Button } from "../ui/Button";
 import { StarRate } from "../ui/StarRate";
 
 type SingleItemProps = {
+  id: number;
   image: string;
   title: string;
   capacity: number;
@@ -15,6 +16,7 @@ type SingleItemProps = {
 };
 
 export const SingleItem = ({
+  id,
   image,
   title,
   capacity,
@@ -60,7 +62,7 @@ export const SingleItem = ({
       </p>
       <p className="installments margin-b10">{instalments}</p>
       <StarRate rating={popularity} />
-      <Button />
+      <Button id={id} />
     </div>
   );
 };

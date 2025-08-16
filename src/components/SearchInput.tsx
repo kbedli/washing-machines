@@ -1,5 +1,5 @@
 import { useContext, type ChangeEvent, useEffect } from "react";
-import { GlobalContext } from "../Context";
+import { GlobalContext } from "../contexts/Context";
 
 export const SearchInput = () => {
   const { filteringInputs, setFilteringInputs, setItems, allItems } =

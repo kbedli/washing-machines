@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../contexts/CartContext";
 
-export const Button = () => {
-  const [itemSelected, setItemSelected] = useState<boolean>(false);
+type ButtonProps = {
+  id: number;
+};
+
+export const Button = ({ id }: ButtonProps) => {
+  const { cart, handleItem } = useContext(CartContext);
+  const itemSelected = cart.some((item) => item.id === id);
   return (
     <button
       className={`btn ${itemSelected ? "btn-selected" : "btn-not-selected"}`}
-      onClick={() => setItemSelected(!itemSelected)}
+      onClick={() => handleItem({ id })}
     >
       {itemSelected ? "Wybrane" : "Wybierz"}
     </button>

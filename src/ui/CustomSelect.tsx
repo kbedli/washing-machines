@@ -29,7 +29,7 @@ export const CustomSelect = ({
     <div className="custom-select">
       <label className="input-label">{label}</label>
       <div className="select-box" onClick={toggleDropdown}>
-        {value ?? "Wybierz..."}
+        {value}
 
         <img className="arrow" src={polygon} alt="arrow"></img>
       </div>

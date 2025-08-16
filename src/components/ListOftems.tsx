@@ -1,5 +1,5 @@
 import { useContext, useEffect, useMemo, useState } from "react";
-import { GlobalContext } from "../Context";
+import { GlobalContext } from "../contexts/Context";
 import { SingleItem } from "./SingleItem";
 
 const visibleItems = 6;

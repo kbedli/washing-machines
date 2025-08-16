@@ -1,12 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
-import { GlobalContextProvider } from "./Context.tsx";
+import { GlobalContextProvider } from "./contexts/Context.tsx";
+import { CartContextProvider } from "./contexts/CartContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <GlobalContextProvider>
-      <App />
-    </GlobalContextProvider>
+    <CartContextProvider>
+      <GlobalContextProvider>
+        <App />
+      </GlobalContextProvider>
+    </CartContextProvider>
   </StrictMode>
 );
