@@ -62,7 +62,7 @@ export const SingleItem = ({
       </p>
       <p className="installments margin-b10">{instalments}</p>
       <StarRate rating={popularity} />
-      <Button id={id} />
+      <Button id={id} image={image} title={title} price={price} />
     </div>
   );
 };

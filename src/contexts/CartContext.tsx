@@ -2,6 +2,9 @@ import { createContext, useState } from "react";
 
 type CartItem = {
   id: number;
+  image: string;
+  title: string;
+  price: number;
 };
 
 type CartContextType = {
@@ -26,7 +29,6 @@ export const CartContextProvider = ({
 
   //   TO ADD OR DELETE ITEM FROM THE CART
   const handleItem = (item: CartItem) => {
-    console.log(item);
     setCart((data) => {
       const itemExists = data.find(
         (washingMachine) => washingMachine.id === item.id
