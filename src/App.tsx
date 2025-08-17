@@ -8,27 +8,32 @@ import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="container">
-      <div className="navbar">
-        <h1 className="title">Wybierz urządzenie</h1>
-        <Link to="/cart">
-          <CartIcon />
-        </Link>
+    <>
+      <div className="navbar-container">
+        <div className="navbar-centered">
+          <h1 className="title">Wybierz urządzenie</h1>
+          <Link to="/cart">
+            <CartIcon />
+          </Link>
+        </div>
       </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <SearchInput />
-              <FilteringInputs />
-              <ListOfItems />
-            </>
-          }
-        />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </div>
+
+      <div className="container">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchInput />
+                <FilteringInputs />
+                <ListOfItems />
+              </>
+            }
+          />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

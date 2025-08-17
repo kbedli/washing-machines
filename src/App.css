@@ -22,30 +22,32 @@ body {
   font-family: "SamsungOne", sans-serif;
   background-color: #f8f8f8;
   color: #000000;
-  margin: 0 200px 50px 200px;
 }
 
 /* ********************************************** COMPONENT APP ********************************************** */
-.container {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.navbar-container {
   background-color: #ffffff;
+}
+
+.navbar-centered {
+  margin: 0 200px;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .title {
   font-weight: 700;
   font-size: 40px;
   line-height: 56px;
-  width: 100%;
-  height: 56px;
-  text-align: center;
   margin: 0 auto;
+}
+
+.container {
+  margin: 0 200px 50px 200px;
+  max-width: 1440px;
 }
 
 /* ********************************************** COMPONENT SEARCHINPUT ********************************************** */
@@ -289,6 +291,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
+  cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
